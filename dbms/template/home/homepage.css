@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+
+:root {
+    --bg-light: #ffffff;
+    --text-dark: #2d3748;
+    --text-light: #f7fafc;
+    --primary-accent: #c53030; 
+    --primary-hover: #9b2c2c;
+    --navbar-bg: rgba(255, 255, 255, 0.85);
+
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Lato', sans-serif;
+}
+
+/* --- Basic Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--bg-light); 
+    background-image: url('unnamed.png');
+    background-size: cover;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Floating Navigation Bar --- */
+.navbar {
+    position: fixed; /* Sticks to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    z-index: 100;
+    background: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    color: var(--text-dark);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: var(--primary-accent);
+}
+
+/* --- Container for the Buttons --- */
+.nav-actions {
+    display: flex;
+    gap: 15px; /* Creates space between the buttons */
+}
+
+/* --- CORRECTED & UNIFIED BUTTON STYLE --- */
+.btn {
+    background-color: var(--primary-accent);
+    color: var(--text-light);
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* --- Full-Screen Static Hero with Parallax Background --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('homepage-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This creates the parallax effect */
+    
+    /* This creates the stylish angled bottom edge */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+}
+
+.hero-content {
+    animation: fadeIn 1s ease-out 0.5s backwards;
+}
+
+.hero-content h1 {
+    font-family: var(--heading-font);
+    font-size: 4.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.btn-hero {
+    background-color: var(--primary-accent);
+    color: var(--text-light);
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+}
+
+/* --- Main Scrollable Content Section --- */
+.main-content {
+    position: relative;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    z-index: 2; 
+}
+
+.features-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.features-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    flex-basis: 280px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-8px);
+}
+
+.feature-item i {
+    font-size: 3rem;
+    color: var(--primary-accent);
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    border-top: 1px solid #dee2e6;
+    color: #6c757d;
+}
+
+/* --- Basic Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-content h1 { font-size: 3rem; }
+}
