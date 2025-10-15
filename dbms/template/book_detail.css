@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+/* --- Consistent Color Palette & Fonts --- */
+:root {
+    --bg-light: #f8f9fa;
+    --text-dark: #2d3748;
+    --text-light: #ffffff;
+    --primary-accent: #a97142; /* Warm sienna */
+    --secondary-accent: #e63946; /* Red for price */
+    --card-bg: #ffffff;
+    --shadow-color: rgba(45, 55, 72, 0.1);
+
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Poppins', sans-serif;
+}
+
+/* --- Base Styling --- */
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* --- Consistent Header Styling --- */
+header {
+    background: var(--text-dark);
+    color: var(--text-light);
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+.logo {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-right: auto; /* Pushes other items right */
+}
+.nav { font-weight: 500; }
+.search {
+    flex: 1;
+    max-width: 300px;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    font-size: 15px;
+    background: #4a5568;
+    color: #fff;
+}
+.cart-icon {
+    font-size: 1.5rem;
+    color: var(--text-light);
+}
+
+/* --- Main Product Layout --- */
+.product-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* Left Side: Image */
+.product-image {
+    flex-shrink: 0;
+}
+.product-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* Right Side: Info */
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+.book-title {
+    font-family: var(--heading-font);
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin: 0 0 5px 0;
+}
+.book-author {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+.book-author a {
+    text-decoration: none;
+    color: var(--primary-accent);
+}
+.book-author a:hover {
+    text-decoration: underline;
+}
+
+.book-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-accent);
+    margin-bottom: 20px;
+}
+.book-description {
+    line-height: 1.7;
+    margin-bottom: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+.book-meta {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.purchase-actions {
+    margin-top: auto; /* Pushes buttons to the bottom */
+    display: flex;
+    gap: 15px;
+}
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-add-to-cart {
+    background-color: var(--primary-accent);
+    color: var(--text-light);
+}
+.btn-buy-now {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+}
+.btn-add-to-cart:hover { background-color: #8c5a31; }
+.btn-buy-now:hover { background-color: #1a202c; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        margin: 20px;
+        padding: 20px;
+    }
+    .product-image {
+        text-align: center;
+    }
+    .product-image img {
+        width: 60%;
+        max-width: 250px;
+    }
+    .book-title {
+        font-size: 2rem;
+    }
+}
