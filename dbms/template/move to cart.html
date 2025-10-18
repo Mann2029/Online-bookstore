@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - BookNest</title>
+    <link rel="stylesheet" href="move to cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">BookNest</div>
+            <a href="book.html" class="nav">DISCOVER</a>
+            <input type="text" class="search" placeholder="Search by title, author or keyword">
+            <a href="move to cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+    <!-- This main container will be dynamically filled by cart.js -->
+    <main class="container" id="cart-container">
+        <h1>Shopping Cart</h1>
+        <p class="loading-message">Loading your cart...</p>
+    </main>
+    
+    <footer class="site-footer">
+        <p>&copy; 2025 BookNest. All Rights Reserved.</p>
+    </footer>
+
+    <script src="move to cart.js"></script>
+</body>
+</html>

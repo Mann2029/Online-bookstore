@@ -1,0 +1,207 @@
+/* Import fonts */
+:root {
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+    --color-primary: #007bff;
+    --color-primary-dark: #0056b3;
+    --color-success: #28a745;
+    --color-text: #333;
+    --color-logo: #2c3e50; /* Dark, elegant blue/charcoal */
+    --color-light-grey: #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    /* A subtle, elegant gradient background */
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    min-height: 100vh;
+    overflow: hidden; /* Hide overflow for confetti */
+}
+
+/* This is the confetti canvas */
+#confetti-canvas {
+    position: fixed; /* Use fixed to cover the whole viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind everything */
+}
+
+/* --- NEW STATIC NAVBAR STYLES --- */
+.static-navbar {
+    background: var(--color-logo); /* Use the dark logo color */
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative; /* Make sure it's on top of confetti */
+    z-index: 2;
+}
+
+.static-navbar .navbar-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.static-navbar .logo {
+    font-family: var(--font-heading);
+    color: #ffffff; /* White logo on dark background */
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0; /* Remove default margin */
+}
+
+/* --- UPDATED CARD CONTAINER --- */
+.thank-you-container {
+    position: relative;
+    z-index: 2; /* In front of the confetti */
+    
+    /* This centers the card and gives it space from the navbar */
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* The main card with a soft, "charming" shadow */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto; /* Center the card */
+    overflow: hidden; /* Keep rounded corners */
+    text-align: center;
+    
+    /* Initial animation for the card */
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* We removed the card header, so this style is no longer needed */
+/* .card-header { ... } */
+
+.card-body {
+    padding: 40px;
+}
+
+/* Checkmark icon with a "pop-in" animation */
+.icon-wrapper {
+    margin-bottom: 25px;
+    opacity: 0; /* Hidden initially, shown by animation */
+    animation: popIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.4s forwards;
+}
+
+.icon-wrapper .fa-check-circle {
+    font-size: 72px;
+    color: var(--color-success);
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--color-text);
+    margin-bottom: 15px;
+    
+    /* Staggered animation */
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out 0.8s forwards;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    
+    /* Staggered animation */
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out 1.0s forwards;
+}
+
+/* Order ID section */
+.order-details {
+    background: var(--color-light-grey);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    
+    /* Staggered animation */
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out 1.2s forwards;
+}
+
+.order-details span {
+    font-size: 1.1rem;
+    color: #444;
+    margin-right: 10px;
+}
+
+.order-details #order-id {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.card-footer {
+    padding: 0 40px 40px;
+    
+    /* Staggered animation */
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out 1.4s forwards;
+}
+
+/* Button with a nice hover effect */
+.btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 50px; /* Pill-shaped */
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-3px); /* Lifts the button */
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+
+/* --- ANIMATION KEYFRAMES --- */
+
+/* For the card and text elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* For the checkmark icon */
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - BookNest</title>
+    
+    <link rel="stylesheet" href="thankyou.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <canvas id="confetti-canvas"></canvas>
+
+    <header class="static-navbar">
+        <div class="navbar-container">
+            <h2 class="logo">BookNest</h2>
+        </div>
+    </header>
+    <main class="thank-you-container">
+        <div class="card">
+            
+            <section class="card-body">
+                <div class="icon-wrapper">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1>Thank You For Your Order!</h1>
+                <p>Your payment was successful and your order is confirmed.</p>
+                
+                <div class="order-details">
+                    <span>Your Order ID is:</span>
+                    <strong id="order-id">#...</strong>
+                </div>
+            </section>
+            
+            <footer class="card-footer">
+                <a href="book.html" class="btn-primary">Continue Shopping</a>
+            </footer>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+    
+    <script src="thankyou.js" defer></script>
+</body>
+</html>
