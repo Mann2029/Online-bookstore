@@ -1,38 +1,31 @@
-online-bookstore/
-|
-|--- backend/
-|    |--- app.py              # Database connection logic
-|
-|
-|--- frontend/
-|    |--- index.php            # Homepage, displays all books
-|    |--- book.php             # Single product detail page
-|    |--- login.php
-|    |--- register.php
-|    |--- cart.php             # View and manage shopping cart
-|    |--- checkout.php         # Final step before placing order
-|    |--- thankyou.php         # Order confirmation page
-|    |--- account.php          # User profile and order history
-|    |
-|    |--- admin/               # Admin-only section
-|    |    |--- index.php        # Admin login or dashboard redirect
-|    |    |--- dashboard.php    # Main admin dashboard
-|    |    |--- manage-books.php # CRUD interface for books
-|    |    |--- view-orders.php  # View and manage customer orders
-|    |
-|    |--- assets/
-|    |    |--- css/
-|    |    |    |--- style.css
-|    |    |--- js/
-|    |    |    |--- script.js
-|    |    |--- images/          # Product images, logos, etc.
-|    |
-|    |--- partials/            # Reusable UI components
-|         |--- header.php
-|         |--- footer.php
-|
-|--- database/
-|    |--- schema.sql           # All CREATE TABLE statements
-|    |--- seed.sql             # Initial data (admin user, categories, books)
-|
-|--- README.md                  # Project setup and instructions
+📁 dbms/
+│
+├── 🐍 app.py              # Your main Python Flask application
+│
+└── 📂 template/          # ALL frontend files go in here
+    │
+    │   # HTML Files
+    ├── 📄 homepage1.html
+    ├── 📄 loginpage.html
+    ├── 📄 registration.html
+    ├── 📄 book.html
+    ├── 📄 book_detail.html
+    ├── 📄 cart.html
+    └── 📄 payment.html
+    │
+    │   # CSS Files
+    ├── 🎨 homepage.css
+    ├── 🎨 loginpage.css
+    ├── 🎨 registration.css
+    ├── 🎨 book.css
+    ├── 🎨 book_detail.css
+    └── 🎨 cart.css
+    │
+    │   # JavaScript Files
+    ├── 📜 loginpage.js
+    ├── 📜 registration.js
+    ├── 📜 book.js
+    ├── 📜 book_detail.js
+    └── 📜 cart.js
+    │
+    └── 🖼️ unnamed.png  (and any other images)
